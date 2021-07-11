@@ -1,4 +1,4 @@
-miRGalaxy for Micro-RNA analysis
+miRGalaxy: a Galaxy‑based framework for interactive analysis of microRNA and isomiR sequencing data 
 =================================
 
 :whale: Galaxy Docker repository for miRNA analysis (Galaxy flavour) - this is a base image containing NGS tools for:
