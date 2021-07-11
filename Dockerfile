@@ -2,7 +2,7 @@
 
 FROM quay.io/bgruening/galaxy:20.09
 
-MAINTAINER Vesselin Baev, vebaev@plantgene.eu
+MAINTAINER Ilias Glogovitis, ilias@uni-plovdiv.bg
 
 # Enable Conda dependency resolution
 ENV GALAXY_CONFIG_BRAND="miRGalaxy" \
