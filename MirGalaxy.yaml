@@ -47,19 +47,19 @@ tools:
 
 - name: armdb
   owner: glogobyte
-  tool_shed_url: https://testtoolshed.g2.bx.psu.edu
+  tool_shed_url: https://toolshed.g2.bx.psu.edu
   tool_panel_section_label: 'MirGalaxy'
 
 
 - name: isoread
   owner: glogobyte
-  tool_shed_url: https://testtoolshed.g2.bx.psu.edu
+  tool_shed_url: https://toolshed.g2.bx.psu.edu
   tool_panel_section_label: 'MirGalaxy'
 
 
 - name: viztool
   owner: glogobyte
-  tool_shed_url: https://testtoolshed.g2.bx.psu.edu
+  tool_shed_url: https://toolshed.g2.bx.psu.edu
   tool_panel_section_label: 'MirGalaxy'
 
 
