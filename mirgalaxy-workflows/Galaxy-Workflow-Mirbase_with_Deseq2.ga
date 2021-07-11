@@ -2,7 +2,7 @@
     "a_galaxy_workflow": "true",
     "annotation": "",
     "format-version": "0.1",
-    "name": "Mirbase with Deseq2",
+    "name": "miRGalaxy workflow v1.0",
     "steps": {
         "0": {
             "annotation": "",
