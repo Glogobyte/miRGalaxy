@@ -22,7 +22,7 @@ Docker images are "read-only", all your changes inside one session will be lost 
 
 Fortunately, this is as easy as:
 
-``docker run -d -p 8080:80 -v /home/user/galaxy_storage/:/export/ mirgalaxy``
+``docker run -d -p 8080:80 -v /home/user/galaxy_storage/:/export/ glogobyte/mirgalaxy``
 
 With the additional ``-v /home/user/galaxy_storage/:/export/`` parameter, docker will mount the folder ``/home/user/galaxy_storage`` into the Container under ``/export/``. A ``startup.sh`` script, that is usually starting Apache, PostgreSQL and Galaxy, will recognize the export directory with one of the following outcomes:
 
