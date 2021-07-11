@@ -2,23 +2,17 @@
 [![Docker Repository on Quay](https://quay.io/repository/vebaev/galaxy-ngs/status "Docker Repository on Quay")](https://quay.io/repository/vebaev/galaxy-ngs)
 
 
-Galaxy Workbench for NGS Analysis
+miRGalaxy for Micro-RNA analysis
 =================================
 
-:whale: Galaxy Docker repository for NGS analysis (Galaxy flavour) - this is a base image containing NGS tools for:
+:whale: Galaxy Docker repository for miRNA analysis (Galaxy flavour) - this is a base image containing NGS tools for:
 
   - QC
   - Pre-processing
-  - Mapping
-  - SAM/BAM/BED manipulations
-  - Transcriptomics tools
-  
-*Note*: For more tools see galaxy-NGSM repo which upgrades more tools on top of this base image. 
-  
-
-In folder ``/config`` file ``job_conf.xml`` is preconfigured for some tools to use multi-core resources - 16CPU (--ntasks=16).
-*Note*: File can be manually installed by user.
-
+  - Alignment
+  - Identification - Quantification of miRNAs and IsomiRs
+  - Differential Expression
+  - Visualization
 
 Usage
 =====
@@ -36,7 +30,7 @@ Docker images are "read-only", all your changes inside one session will be lost 
 
 Fortunately, this is as easy as:
 
-``docker run -d -p 8080:80 -v /home/user/galaxy_storage/:/export/ quay.io/vebaev/galaxy-ngs``
+``docker run -d -p 8080:80 -v /home/user/galaxy_storage/:/export/ mirgalaxy:v1
 
 With the additional ``-v /home/user/galaxy_storage/:/export/`` parameter, docker will mount the folder ``/home/user/galaxy_storage`` into the Container under ``/export/``. A ``startup.sh`` script, that is usually starting Apache, PostgreSQL and Galaxy, will recognize the export directory with one of the following outcomes:
 
@@ -59,8 +53,7 @@ a cache to keep the most recently used data on the local disk.
 Users & Passwords
 ================
 
-The Galaxy Admin User has the username ``admin@galaxy.org`` and the password ``admin``.
-The PostgreSQL username is ``galaxy``, the password is ``galaxy`` and the database name is ``galaxy`` (I know I was really creative ;)).
+The Galaxy Admin User has the username ``admin`` and the password ``password``.
 If you want to create new users, please make sure to use the ``/export/`` volume. Otherwise your user will be removed after your docker session is finished.
 
 
@@ -72,12 +65,15 @@ Requirements
 
 Credits
 ============
-Many thanks Saskia Hiltemann! and of course Björn Grüning for the Galaxy-Docker!
+Many thanks to the Galaxy community!
 
 
 Contacts
 ============
-Vesselin Baev vebaev@plantgene.eu, University of Plovdiv. BG
+Ilias Glogovitis
+Researcher at University of Plovdiv
+PhD candidate at VU University Medical Center
+ilias@uni-plovdiv.bg
 
 
 Licence (MIT)
