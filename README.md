@@ -16,11 +16,7 @@ At first you need to install docker. Please follow the instruction on https://do
 
 After the successful installation, all what you need to do is:
 
-``docker run -d -p 8080:80 quay.io/vebaev/galaxy-ngs``
-
-or alternative (from Docker Hub)
-
-``docker run -d -p 8080:80 vebaev/galaxy-ngs``
+``docker run -d -p 8080:80 glogobyte/mirgalaxy``
 
 Docker images are "read-only", all your changes inside one session will be lost after restart. This mode is useful to present Galaxy to your colleagues or to run workshops with it. To install Tool Shed repositories or to save your data you need to export the calculated data to the host computer.
 
