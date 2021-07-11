@@ -1,7 +1,3 @@
-
-[![Docker Repository on Quay](https://quay.io/repository/vebaev/galaxy-ngs/status "Docker Repository on Quay")](https://quay.io/repository/vebaev/galaxy-ngs)
-
-
 miRGalaxy for Micro-RNA analysis
 =================================
 
@@ -70,9 +66,9 @@ Many thanks to the Galaxy community!
 
 Contacts
 ============
-Ilias Glogovitis
-Researcher at University of Plovdiv
-PhD candidate at VU University Medical Center
+Ilias Glogovitis\
+Researcher at University of Plovdiv\
+PhD candidate at VU University Medical Center\
 ilias@uni-plovdiv.bg
 
 
