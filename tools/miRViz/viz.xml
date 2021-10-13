@@ -1,0 +1,82 @@
+<tool id="mirViz" name="mirViz: Vizualizations and reports" version="0.1.0">
+  <requirements>
+    <requirement type="package" version="1.7">fpdf</requirement>
+    <requirement type="package" version="3.7.4">python</requirement>
+    <requirement type="package" version="1.17.3">numpy</requirement>
+    <requirement type="package" version="3.1.2">matplotlib</requirement>
+    <requirement type="package" version="1.0.3">pandas</requirement>
+  </requirements>
+  <command>
+    #if $opt.stats.choice == "1":
+        python $__tool_directory__/viz.py -in $input_file -p_value "$opt.stats.pvalue" -fc $opt.log2fc -top $opt.top_mirna -tool_dir $__tool_directory__ -statistic "$opt.stats.choice" -diff_tool "$opt.tool"
+    #elif $opt.stats.choice == "2":
+        python $__tool_directory__/viz.py -in $input_file -p_value "$opt.stats.padj" -fc $opt.log2fc -top $opt.top_mirna -tool_dir $__tool_directory__ -statistic "$opt.stats.choice" -diff_tool "$opt.tool"
+    #else:
+        python $__tool_directory__/viz.py -in $input_file -p_value "$opt.stats.Basemean" -fc $opt.log2fc -top $opt.top_mirna -tool_dir $__tool_directory__ -statistic "$opt.stats.choice" -diff_tool "$opt.tool"
+    #end if
+  </command>
+  <inputs>
+   <conditional name="opt">
+    <param name="tool" type="select" label="Input file source:" help="Choose the tool which generates the input file.">
+      <option value="1" selected="true">Deseq2</option>
+      <option value="2">EdgeR</option>
+    </param>
+    <when value="1">
+     <param name="input_file" type="data" format="tabular" label="Input file" help="File from Deseq2"/>
+     <param name="top_mirna" type="select" label="Choose the number of top differentially miRNAs in the report" help="Choose the number of top differentially expressed miRNAs.">
+       <option value="10" selected="true">Top 10</option>
+       <option value="20">Top 20</option>
+       <option value="30">Top 30</option>
+       <option value="40">Top 40</option>
+       <option value="50">Top 50</option>
+     </param>
+     <conditional name="stats">
+      <param name="choice" type="select" label="Filter by p-value, p-adj or Base mean">
+       <option value="1" selected="true">p-value</option>
+       <option value="2">P-adj</option>
+       <option value="3">Base mean</option>
+      </param>
+      <when value="1">
+       <param name="pvalue" type="float" min="0" max="1" value="0.05" label="P-value (max value)" help="p-value threshold" />
+      </when>
+      <when value="2">
+       <param name="padj" type="float" min="0" max="1" value="0.05" label="P-adjustment (max value)" help="p-adjustment threshold" />
+      </when>
+      <when value="3">
+       <param name="Basemean" type="integer" value="0" min="0" label="Base mean (min value)" help="Base mean threshold" />
+      </when>
+     </conditional>
+     <param name="log2fc" type="float" min="0" max="10" value="1" label="Log2FC (Absolute value)" help="Log2FC threshold" />
+    </when>
+    <when value="2">
+     <param name="input_file" type="data" format="tabular" label="Input file" help="File from EdgeR"/>
+     <param name="top_mirna" type="select" label="Choose the number of top differentially miRNAs in the report" help="Choose the number of top differentially expressed miRNAs.">
+       <option value="10" selected="true">Top 10</option>
+       <option value="20">Top 20</option>
+       <option value="30">Top 30</option>
+       <option value="40">Top 40</option>
+       <option value="50">Top 50</option>
+     </param>
+     <conditional name="stats">
+      <param name="choice" type="select" label="Filter by p-value or p-adj">
+       <option value="1" selected="true">p-value</option>
+       <option value="2">P-adj</option>
+      </param>
+      <when value="1">
+       <param name="pvalue" type="float" min="0" max="1" value="0.05" label="P-value (max value)" help="p-value threshold" />
+      </when>
+      <when value="2">
+       <param name="padj" type="float" min="0" max="1" value="0.05" label="P-adjustment (max value)" help="p-adjustment threshold" />
+      </when>
+     </conditional>
+     <param name="log2fc" type="float" min="0" max="10" value="1" label="Log2FC (Absolute value)" help="Log2FC threshold" />
+    </when>
+   </conditional>
+  </inputs>
+  <outputs>
+    <data name="File" format="pdf" label="Differential expression of miRNAs and isoforms" from_work_dir="$__tool_directory__/report2.pdf" />
+  </outputs>
+  <help>
+
+  </help>
+</tool>
