@@ -44,10 +44,6 @@ install_tool_dependencies: False
 
 tools:
 
-#- name: featurecounts
-#  owner: iuc
-#  tool_panel_section_label: "Quantification Tools"
-
 - name: rgrnastar
   owner: iuc
   tool_panel_section_label: "Alingment"
