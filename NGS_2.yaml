@@ -43,19 +43,6 @@ install_tool_dependencies: False
 
 tools:
 
-#- name: htseq_count
-#  owner: lparsons
-#  tool_panel_section_label: "Quantification Tools"
-
-
-#- name: sailfish
-#  owner: bgruening
-#  tool_panel_section_label: "Quantification Tools"
-  
-#- name: salmon
-#  owner: bgruening
-#  tool_panel_section_label: "Quantification Tools"
-
 - name: limma_voom
   owner: iuc
   tool_panel_section_label: "Differential Expression"
