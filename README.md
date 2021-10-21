@@ -58,6 +58,8 @@ Requirements
 Credits
 ============
 Many thanks to the Galaxy community!
+- [Galaxy-docker](https://github.com/bgruening/docker-galaxy-stable)
+
 
 
 Contacts
