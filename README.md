@@ -55,7 +55,7 @@ Requirements
 - [docker](https://docs.docker.com/installation/)
 
 
-Credits [link](https://github.com/bgruening/docker-galaxy-stable)
+Credits [[link]](https://github.com/bgruening/docker-galaxy-stable)
 ============
 Many thanks to the Galaxy community!\
 For more full description of the options of Galaxy docker:
