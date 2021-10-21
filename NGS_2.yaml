@@ -53,7 +53,4 @@ tools:
   
 - name: deseq2
   owner: iuc
-  revisions:
-  - 0696db066a5b
-  - 24a09ca67621
   tool_panel_section_label: "Differential Expression"
