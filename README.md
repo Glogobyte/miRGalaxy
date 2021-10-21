@@ -59,7 +59,7 @@ Credits
 ============
 Many thanks to the Galaxy community!
 - [Galaxy-docker](https://github.com/bgruening/docker-galaxy-stable)
-
+For more full description of the options of Galaxy docker [link](https://github.com/bgruening/docker-galaxy-stable) 
 
 
 Contacts
